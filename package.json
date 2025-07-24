@@ -1,0 +1,26 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000c\u0000y\u0000p\u0000r\u0000e\u0000s\u0000s\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --browser chrome --spec 'cypress/e2e/drive2_spec.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PleD1k/cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PleD1k/cypress/issues"
+  },
+  "homepage": "https://github.com/PleD1k/cypress#readme",
+  "devDependencies": {
+    "cypress": "^14.5.2",
+    "cypress-xpath": "^2.0.1",
+    "dotenv": "^17.2.0"
+  }
+}
