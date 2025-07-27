@@ -3,3 +3,7 @@ cypress/screenshots/
 cypress/videos/
 .env
 .DS_Store
+allure-report
+allure-results
+cypress/downloads
+logs/

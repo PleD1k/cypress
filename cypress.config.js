@@ -1,18 +1,30 @@
 const { defineConfig } = require('cypress');
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
+const logger = require('./cypress/utils/logger');
 
 module.exports = defineConfig({
-  pageLoadTimeout: 10000,
-  defaultCommandTimeout: 10000,
-  video: true,
-  screenshotOnRunFailure: true,
-
   e2e: {
-    baseUrl: 'https://www.drive2.ru',
-    specPattern: 'cypress/e2e/**/*.js',
-    supportFile: 'cypress/support/e2e.js',
-    chromeWebSecurity: false,
     setupNodeEvents(on, config) {
-      // сюда при необходимости можно добавить обработчики событий
+      // Allure integration
+      allureWriter(on, config);
+
+      // Winston logger integration
+      on('task', {
+        log(message) {
+          logger.info(message);
+          return null;
+        },
+        error(message) {
+          logger.error(message);
+          return null;
+        },
+      });
+
+      return config;
     },
+    baseUrl: 'https://www.drive2.ru',
+    video: true,
+    screenshotsFolder: 'cypress/screenshots',
+    videosFolder: 'cypress/videos'
   },
 });

@@ -33,3 +33,8 @@ Cypress.Commands.add('visitWithTimeout', (url = '/') => {
     },
   });
 });
+
+Cypress.Commands.add('logStep', (stepName) => {
+  cy.allure().startStep(stepName);
+  cy.task('log', stepName);
+});

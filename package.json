@@ -1,11 +1,14 @@
 {
   "name": "cypress",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000c\u0000y\u0000p\u0000r\u0000e\u0000s\u0000s\u0000\r\u0000 \u0000",
+  "description": "��# cypress\r ",
   "main": "index.js",
   "scripts": {
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run --browser chrome --spec 'cypress/e2e/drive2_spec.js'"
+    "cypress:run": "cypress run --browser chrome --spec 'cypress/e2e/drive2.cy.js'",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "test:allure": "npm run cypress:run && npm run allure:generate"
   },
   "repository": {
     "type": "git",
@@ -19,8 +22,11 @@
   },
   "homepage": "https://github.com/PleD1k/cypress#readme",
   "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.41.2",
+    "allure-commandline": "^2.34.1",
     "cypress": "^14.5.2",
     "cypress-xpath": "^2.0.1",
-    "dotenv": "^17.2.0"
+    "dotenv": "^17.2.0",
+    "winston": "^3.17.0"
   }
 }
