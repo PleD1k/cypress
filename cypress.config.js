@@ -12,7 +12,6 @@ module.exports = defineConfig({
     supportFile: 'cypress/support/e2e.js',
     chromeWebSecurity: false,
     setupNodeEvents(on, config) {
-      // сюда при необходимости можно добавить обработчики событий
     },
   },
 });
